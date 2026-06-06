@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+:root {
+  --sand: #e6d8c3;
+  --seafoam: #a9c9c3;
+  --orange: #c96e2d;
+  --lavender: #8e6a8c;
+  --cocoa: #4a433e;
+  --horizon: #8a8b82;
+  --mist: #c8c6bc;
+  --coral: #d9854f;
+  --shadow-soft: 0 18px 40px rgba(74, 67, 62, 0.14);
+  --shadow-card: 0 12px 30px rgba(74, 67, 62, 0.12);
+  --serif-display: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia,
+    serif;
+  --mono-body: 'SFMono-Regular', 'Cascadia Mono', 'Liberation Mono', Consolas,
+    monospace;
+}
+
+@theme {
+  --color-sand: var(--sand);
+  --color-seafoam: var(--seafoam);
+  --color-orange: var(--orange);
+  --color-lavender: var(--lavender);
+  --color-cocoa: var(--cocoa);
+  --color-horizon: var(--horizon);
+  --color-mist: var(--mist);
+  --color-coral: var(--coral);
+  --font-serif: var(--serif-display);
+  --font-mono: var(--mono-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--cocoa);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.22), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 28%),
+    var(--sand);
+  font-family: var(--mono-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.085;
+  background-image:
+    radial-gradient(rgba(74, 67, 62, 0.45) 0.6px, transparent 0.8px),
+    radial-gradient(rgba(74, 67, 62, 0.18) 0.5px, transparent 0.7px);
+  background-size: 4px 4px, 7px 7px;
+  background-position: 0 0, 2px 3px;
+  mix-blend-mode: multiply;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
