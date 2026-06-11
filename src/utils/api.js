@@ -1,4 +1,6 @@
-export const PRAG_API_URL = import.meta.env.VITE_API_URL ?? ''
+export const PRAG_API_URL = import.meta.env.DEV
+  ? import.meta.env.VITE_PRAG_API_URL_DEV ?? ''
+  : import.meta.env.VITE_PRAG_API_URL_PROD ?? ''
 
 function getApiUrl(path) {
   return `${PRAG_API_URL.replace(/\/$/, '')}${path}`
