@@ -24,7 +24,7 @@ const SUGGESTIONS = [
   'What are my technical skills?',
   'Generate my interview intro',
   'What is my latest CGPA?',
-  'Summarize my experience',
+  'Duration of my internships?',
 ]
 
 export default function ChatInterface({ indexedFiles: initialFiles, isLoading, messages, syncing, onSync, onLock, onSendMessage }) {

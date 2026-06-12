@@ -34,7 +34,7 @@ export default function FilesDropdown({ files, totalFiles }) {
       </button>
 
       {isOpen ? (
-        <div className="absolute right-0 max-sm:translate-x-6 top-full z-30 mt-2 w-[min(19rem,calc(100vw-1.5rem))] rounded-2xl border border-(--ctp-surface1) bg-(--ctp-mantle)/95 text-(--ctp-subtext) shadow-[0_20px_38px_rgba(0,0,0,0.45)] backdrop-blur-md">
+        <div className="absolute right-0 max-sm:translate-x-12 top-full z-30 mt-2 w-[min(19rem,calc(100vw-1.5rem))] rounded-2xl border border-(--ctp-surface1) bg-(--ctp-mantle)/95 text-(--ctp-subtext) shadow-[0_20px_38px_rgba(0,0,0,0.45)] backdrop-blur-md">
           <div className="max-h-75 overflow-y-auto prag-scrollbar p-2">
             {files.map((file) => (
               (file.file_url ?? file.drive_url) ? (
@@ -47,7 +47,7 @@ export default function FilesDropdown({ files, totalFiles }) {
                   className="flex items-start gap-2 rounded-xl px-3 py-2 text-sm transition hover:bg-(--ctp-surface0)/70 hover:text-(--ctp-text) hover:underline"
                 >
                   {/* <FileIcon className="h-4 w-4" /> */}
-                  <span className="break-words">{file.filename}</span>
+                  <span className="wrap-break-words">{file.filename}</span>
                 </a>
               ) : (
                 <div
@@ -55,7 +55,7 @@ export default function FilesDropdown({ files, totalFiles }) {
                   className="flex items-start gap-2 rounded-xl px-3 py-2 text-sm opacity-70"
                 >
                   {/* <FileIcon /> */}
-                  <span className="break-words">{file.filename}</span>
+                  <span className="wrap-break-words">{file.filename}</span>
                 </div>
               )
             ))}

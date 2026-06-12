@@ -140,7 +140,7 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
         </div>
 
         <div className="flex w-full max-w-4xl flex-wrap justify-center gap-3 pb-2 sm:gap-4">
-          {['Local-first privacy', 'Multi-format documents', 'Instant RAG answers'].map((pill) => (
+          {['Multi-format support', 'Hybrid Search', 'Privacy by design'].map((pill) => (
             <span key={pill} className="rounded-full border border-(--ctp-surface1) bg-(--ctp-mantle)/72 px-4 py-2 text-xs text-(--ctp-subtext) shadow-[0_8px_16px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:text-sm">
               {pill}
             </span>
