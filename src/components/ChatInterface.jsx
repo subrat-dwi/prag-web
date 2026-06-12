@@ -7,7 +7,7 @@ import Spinner from './Spinner.jsx'
 import { fetchFiles } from '../utils/api.js'
 import { AiOutlineFileSync } from 'react-icons/ai'
 import { LoaderIcon } from 'lucide-react'
-import PixelBlast from './PixelBlast.jsx'
+// import PixelBlast from './PixelBlast.jsx'
 
 function SuggestionChip({ children, onClick }) {
   return (

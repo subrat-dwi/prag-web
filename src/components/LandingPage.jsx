@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { verifyKey } from '../utils/api.js'
-import PixelBlast from './PixelBlast.jsx'
+// import PixelBlast from './PixelBlast.jsx'
 
 function Spinner() {
   return (
