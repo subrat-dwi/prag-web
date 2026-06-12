@@ -13,8 +13,8 @@ export default defineConfig({
         name: 'PRAG — Personal Assistant',
         short_name: 'PRAG',
         description: 'Your personal document assistant',
-        theme_color: '#4A433E',
-        background_color: '#E6D8C3',
+        theme_color: '#1E1E2E',
+        background_color: '#313244',
         display: 'standalone',
         icons: [
           { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },
