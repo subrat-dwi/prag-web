@@ -75,7 +75,7 @@ export default function ChatInterface({ indexedFiles: initialFiles, isLoading, m
 
     setDraft('')
     await onSendMessage(trimmedMessage)
-    requestAnimationFrame(() => textareaRef.current?.focus())
+    // requestAnimationFrame(() => textareaRef.current?.focus())
   }
 
   return (

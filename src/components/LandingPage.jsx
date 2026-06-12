@@ -20,9 +20,13 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
   const [shakeCounter, setShakeCounter] = useState(0)
   const inputRef = useRef(null)
 
+  // useEffect(() => {
+  //   inputRef.current?.focus()
+  // }, [])
   useEffect(() => {
-    inputRef.current?.focus()
-  }, [])
+  const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+  if (!isMobile) textareaRef.current?.focus()
+}, [])
 
   const errorMessage = localError || noticeMessage
 
