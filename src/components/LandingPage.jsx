@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { verifyKey } from '../utils/api.js'
+import PixelBlast from './PixelBlast.jsx'
 
 function Spinner() {
   return (
@@ -63,8 +64,12 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
   }
 
   return (
-    <main className="prag-shell prag-bg-orbs prag-noise flex min-h-screen flex-col justify-between bg-(--ctp-base) px-4 py-6 text-(--ctp-text) sm:px-6 lg:px-8">
-      <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-between gap-10 py-4 text-center">
+    <main className="relative prag-shell prag-bg-orbs prag-noise flex min-h-dvh flex-col justify-between bg-(--ctp-base) px-4 py-6 text-(--ctp-text) sm:px-6 lg:px-8">
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <PixelBlast classname="relative h-full w-full overflow-hidden" />
+      </div>
+      
+      <div className="relative mx-auto z-10 flex w-full max-w-6xl flex-1 flex-col items-center justify-between gap-10 py-4 text-center">
         <div className="pt-4 sm:pt-10">
           <div className="prag-title text-5xl font-semibold tracking-[0.24em] text-(--ctp-text) sm:text-6xl">
             PRAG
