@@ -25,16 +25,16 @@ export default function FilesDropdown({ files, totalFiles }) {
       <button
         type="button"
         onClick={() => setIsOpen((current) => !current)}
-        className="flex items-baseline justify-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-xs font-medium text-(--sand) transition hover:bg-white/12 sm:text-sm"
+        className="prag-glow-hover flex items-center justify-center gap-2 rounded-full border border-(--ctp-surface1) bg-(--ctp-crust)/70 px-3 py-1 text-xs font-medium text-(--ctp-subtext) transition sm:text-sm"
       >
-        <FileIcon />
+        <FileIcon className="h-4 w-4" aria-hidden="true" />
         <span>
           {totalFiles} {totalFiles === 1 ? 'file' : 'files'}
         </span>
       </button>
 
       {isOpen ? (
-        <div className="absolute left-0 top-full z-30 mt-2 w-[min(18rem,calc(100vw-1.5rem))] rounded-2xl border border-(--horizon) bg-(--mist) text-(--cocoa) shadow-[0_18px_36px_rgba(74,67,62,0.16)]">
+        <div className="absolute right-0 max-sm:translate-x-6 top-full z-30 mt-2 w-[min(19rem,calc(100vw-1.5rem))] rounded-2xl border border-(--ctp-surface1) bg-(--ctp-mantle)/95 text-(--ctp-subtext) shadow-[0_20px_38px_rgba(0,0,0,0.45)] backdrop-blur-md">
           <div className="max-h-75 overflow-y-auto prag-scrollbar p-2">
             {files.map((file) => (
               (file.file_url ?? file.drive_url) ? (
@@ -44,9 +44,9 @@ export default function FilesDropdown({ files, totalFiles }) {
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-start gap-2 rounded-xl px-3 py-2 text-sm transition hover:bg-(--seafoam)/40 hover:underline"
+                  className="flex items-start gap-2 rounded-xl px-3 py-2 text-sm transition hover:bg-(--ctp-surface0)/70 hover:text-(--ctp-text) hover:underline"
                 >
-                  <FileIcon />
+                  {/* <FileIcon className="h-4 w-4" /> */}
                   <span className="break-words">{file.filename}</span>
                 </a>
               ) : (
@@ -54,8 +54,8 @@ export default function FilesDropdown({ files, totalFiles }) {
                   key={file.filename}
                   className="flex items-start gap-2 rounded-xl px-3 py-2 text-sm opacity-70"
                 >
-                  <FileIcon />
-                  <span className="wrap-break-word">{file.filename}</span>
+                  {/* <FileIcon /> */}
+                  <span className="break-words">{file.filename}</span>
                 </div>
               )
             ))}

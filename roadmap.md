@@ -1,4 +1,5 @@
 # Next Up
+- Streaming Responses
 - PWA manifest + service worker
 - Deploy to Vercel
 

@@ -28,7 +28,7 @@ function createGreetingMessage() {
   return {
     id: crypto.randomUUID(),
     role: 'assistant',
-    content: 'Ask me anything from your private document set. I will look for the most relevant context and answer directly.',
+    content: 'I\'m here to answer your queries with the help of your own personal documents.',
     sources: [],
     timestamp: new Date(),
   }

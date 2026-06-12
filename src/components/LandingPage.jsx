@@ -63,20 +63,20 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
   }
 
   return (
-    <main className="prag-shell prag-noise flex min-h-screen flex-col justify-between bg-(--sand) px-4 py-6 text-(--cocoa) sm:px-6 lg:px-8">
-      <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-between gap-8 py-4 text-center">
-        <div className="pt-2 sm:pt-8">
-          <div className="prag-title text-5xl font-semibold tracking-[0.28em] text-(--cocoa) sm:text-6xl">
+    <main className="prag-shell prag-bg-orbs prag-noise flex min-h-screen flex-col justify-between bg-(--ctp-base) px-4 py-6 text-(--ctp-text) sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-between gap-10 py-4 text-center">
+        <div className="pt-4 sm:pt-10">
+          <div className="prag-title text-5xl font-semibold tracking-[0.24em] text-(--ctp-text) sm:text-6xl">
             PRAG
           </div>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-(--cocoa)/80 sm:text-base">
-            Your personal document assistant. Ask anything about yourself.
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-(--ctp-subtext) sm:text-base">
+            A calm AI workspace for retrieval-augmented conversations with your personal documents.
           </p>
         </div>
 
         <div className={`w-full max-w-lg ${expiredMessage ? 'space-y-3' : ''}`}>
           {expiredMessage ? (
-            <div className="rounded-2xl border border-[#c4a944] bg-[#efe2aa] px-4 py-3 text-left text-sm text-(--cocoa) shadow-[0_6px_16px_rgba(74,67,62,0.08)]">
+            <div className="rounded-2xl border border-(--ctp-yellow)/70 bg-(--ctp-yellow)/14 px-4 py-3 text-left text-sm text-(--ctp-yellow) shadow-[0_8px_18px_rgba(0,0,0,0.28)]">
               {expiredMessage}
             </div>
           ) : null}
@@ -86,12 +86,12 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
               event.preventDefault()
               handleLogin()
             }}
-            className={`prag-card w-full max-w-lg rounded-[28px] border border-(--horizon) bg-(--mist)/95 p-5 text-left backdrop-blur-sm sm:p-7 ${shakeCounter ? 'shake-card' : ''}`}
+            className={`prag-card w-full max-w-lg rounded-[28px] border border-(--ctp-surface1)/75 bg-(--ctp-mantle)/88 p-5 text-left backdrop-blur-md sm:p-7 ${shakeCounter ? 'shake-card' : ''}`}
             onAnimationEnd={() => setShakeCounter(0)}
           >
             <label
               htmlFor="access-key"
-              className="mb-3 block text-sm font-medium tracking-[0.08em] text-(--cocoa)"
+              className="mb-3 block text-sm font-medium tracking-[0.08em] text-(--ctp-subtext)"
             >
               Enter your access key
             </label>
@@ -108,13 +108,13 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
                 clearMessages()
               }}
               disabled={isSubmitting}
-              className="w-full rounded-2xl border border-(--horizon) bg-(--sand) px-4 py-3 font-mono text-sm text-(--cocoa) outline-none transition focus:border-(--orange) focus:ring-2 focus:ring-(--orange)/35"
+              className="w-full rounded-2xl border border-(--ctp-surface1) bg-(--ctp-crust)/85 px-4 py-3 text-sm text-(--ctp-text) outline-none transition placeholder:text-(--ctp-overlay) focus:border-(--ctp-mauve) focus:ring-2 focus:ring-(--ctp-mauve)/30"
               aria-invalid={Boolean(errorMessage)}
               aria-describedby={errorMessage ? 'prag-auth-error' : undefined}
             />
 
             {errorMessage ? (
-              <p id="prag-auth-error" className="text-sm text-(--coral)">
+              <p id="prag-auth-error" className="text-sm text-(--ctp-red)">
                 {errorMessage}
               </p>
             ) : null}
@@ -122,7 +122,7 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
             <button
               type="submit"
               disabled={!enteredKey.trim() || isSubmitting}
-              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-(--orange) px-4 py-3 font-medium text-white transition hover:bg-[#b85f24] disabled:cursor-not-allowed disabled:bg-(--horizon) disabled:opacity-100"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-(--ctp-mauve) px-4 py-3 font-medium text-(--ctp-crust) transition hover:bg-[#bea0ee] disabled:cursor-not-allowed disabled:bg-(--ctp-surface2) disabled:text-(--ctp-overlay)"
             >
               {isSubmitting ? (
                 <>
@@ -140,8 +140,8 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
         </div>
 
         <div className="flex w-full max-w-4xl flex-wrap justify-center gap-3 pb-2 sm:gap-4">
-          {['🔒 Local-first privacy', '📄 Multi-format documents', '⚡ Instant answers'].map((pill) => (
-            <span key={pill} className="rounded-full border border-(--horizon) bg-[#e8e2d6a6] px-4 py-2 text-xs text-(--cocoa) shadow-[0_6px_16px_rgba(74,67,62,0.08)] backdrop-blur-sm sm:text-sm">
+          {['Local-first privacy', 'Multi-format documents', 'Instant RAG answers'].map((pill) => (
+            <span key={pill} className="rounded-full border border-(--ctp-surface1) bg-(--ctp-mantle)/72 px-4 py-2 text-xs text-(--ctp-subtext) shadow-[0_8px_16px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:text-sm">
               {pill}
             </span>
           ))}

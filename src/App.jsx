@@ -2,6 +2,7 @@ import { useState } from 'react'
 import LandingPage from './components/LandingPage.jsx'
 import ChatInterface from './components/ChatInterface.jsx'
 import { useChat } from './hooks/useChat.js'
+import { syncDrive } from './utils/api.js'
 import './App.css'
 
 function App() {
@@ -43,6 +44,18 @@ function App() {
     chat.resetChat()
     setIsAuthenticated(false)
   }
+  const [syncing, setSyncing] = useState(false)
+  async function handleSync() {
+  setSyncing(true)
+  try {
+    await syncDrive(apiKey)
+    // toast/notify success
+  } catch (e) {
+    // toast/notify e.message
+  } finally {
+    setSyncing(false)
+  }
+}
 
   const clearExpiredMessage = () => setExpiredMessage('')
 
@@ -62,6 +75,8 @@ function App() {
       indexedFiles={chat.indexedFiles}
       isLoading={chat.isLoading}
       messages={chat.messages}
+      syncing={syncing}
+      onSync={handleSync}
       onLock={handleLock}
       onSendMessage={chat.sendMessage}
     />

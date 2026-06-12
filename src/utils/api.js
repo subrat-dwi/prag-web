@@ -31,6 +31,24 @@ export async function fetchFiles(apiKey) {
   return response.json()
 }
 
+export async function syncDrive(apiKey) {
+  if (!PRAG_API_URL) {
+    throw createApiError('Missing API URL', 'config')
+  }
+  const response = await fetch(getApiUrl('/sync'), {
+    method: 'POST',
+    headers: { 'X-API-Key': apiKey },
+  })
+  if (response.ok) return response.json()
+  if (response.status === 403) {
+    throw createApiError('Session expired. Please re-enter your access key.', 'auth')
+  }
+  if (response.status >= 500) {
+    throw createApiError('Sync failed on the server. Try again.', 'server')
+  }
+  throw createApiError('Connection failed. Is the server running?', 'network')
+}
+
 export async function queryPrag(messageText, accessKey) {
   if (!PRAG_API_URL) {
     throw createApiError('Missing API URL', 'config')

@@ -6,8 +6,8 @@ export default function MessageBubble({ message }) {
 
   if (isUser) {
     return (
-      <div className="flex justify-end">
-        <div className="max-w-[88%] rounded-[18px_18px_4px_18px] bg-(--cocoa) px-4 py-3 text-sm leading-6 text-(--sand) shadow-[0_10px_20px_rgba(74,67,62,0.12)] sm:max-w-[75%] sm:text-[15px]">
+      <div className="prag-fade-in flex justify-end">
+        <div className="max-w-[88%] rounded-[18px_18px_6px_18px] border border-(--ctp-blue)/55 bg-(--ctp-blue)/18 px-4 py-3 text-sm leading-6 text-(--ctp-text) shadow-[0_12px_22px_rgba(8,8,14,0.35)] sm:max-w-[75%] sm:text-[15px]">
           {message.content}
         </div>
       </div>
@@ -15,19 +15,19 @@ export default function MessageBubble({ message }) {
   }
 
   return (
-    <div className="flex justify-start">
+    <div className="prag-fade-in flex justify-start">
       <div
-        className={`max-w-[92%] rounded-[18px_18px_18px_4px] border-l-4 px-4 py-3 text-sm leading-6 shadow-[0_10px_20px_rgba(74,67,62,0.08)] sm:max-w-[78%] sm:text-[15px] ${
+        className={`max-w-[92%] rounded-[18px_18px_18px_6px] border px-4 py-3 text-sm leading-6 shadow-[0_12px_24px_rgba(0,0,0,0.3)] sm:max-w-[78%] sm:text-[15px] ${
           isError
-            ? 'border-l-(--coral) bg-[#f2d9d3] text-(--cocoa)'
-            : 'border-l-(--seafoam) bg-(--mist) text-(--cocoa)'
+            ? 'border-(--ctp-red)/65 bg-(--ctp-red)/16 text-(--ctp-text)'
+            : 'border-(--ctp-surface1) bg-(--ctp-mantle)/88 text-(--ctp-text)'
         }`}
       >
-        <p>{message.content}</p>
+        <p className="whitespace-pre-wrap">{message.content}</p>
 
         {message.sources?.length ? (
           <div className="mt-3 space-y-2">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-(--horizon)">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-(--ctp-overlay)">
               Sources:
             </div>
 

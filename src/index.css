@@ -1,33 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import 'tailwindcss';
 
 :root {
-  --sand: #e6d8c3;
-  --seafoam: #a9c9c3;
-  --orange: #c96e2d;
-  --lavender: #8e6a8c;
-  --cocoa: #4a433e;
-  --horizon: #8a8b82;
-  --mist: #c8c6bc;
-  --coral: #d9854f;
-  --shadow-soft: 0 18px 40px rgba(74, 67, 62, 0.14);
-  --shadow-card: 0 12px 30px rgba(74, 67, 62, 0.12);
-  --serif-display: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia,
-    serif;
-  --mono-body: 'SFMono-Regular', 'Cascadia Mono', 'Liberation Mono', Consolas,
-    monospace;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+  --ctp-surface0: #313244;
+  --ctp-surface1: #45475a;
+  --ctp-surface2: #585b70;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext: #bac2de;
+  --ctp-overlay: #6c7086;
+  --ctp-blue: #89b4fa;
+  --ctp-mauve: #cba6f7;
+  --ctp-teal: #94e2d5;
+  --ctp-green: #a6e3a1;
+  --ctp-peach: #fab387;
+  --ctp-red: #f38ba8;
+  --ctp-yellow: #f9e2af;
+  --shadow-soft: 0 24px 46px rgba(8, 8, 14, 0.36);
+  --shadow-card: 0 16px 30px rgba(0, 0, 0, 0.32);
+  --font-ui: 'Geist', 'Inter', 'SF Pro Text', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'SFMono-Regular', Consolas, monospace;
 }
 
 @theme {
-  --color-sand: var(--sand);
-  --color-seafoam: var(--seafoam);
-  --color-orange: var(--orange);
-  --color-lavender: var(--lavender);
-  --color-cocoa: var(--cocoa);
-  --color-horizon: var(--horizon);
-  --color-mist: var(--mist);
-  --color-coral: var(--coral);
-  --font-serif: var(--serif-display);
-  --font-mono: var(--mono-body);
+  --color-ctp-base: var(--ctp-base);
+  --color-ctp-mantle: var(--ctp-mantle);
+  --color-ctp-crust: var(--ctp-crust);
+  --color-ctp-surface0: var(--ctp-surface0);
+  --color-ctp-surface1: var(--ctp-surface1);
+  --color-ctp-surface2: var(--ctp-surface2);
+  --color-ctp-text: var(--ctp-text);
+  --color-ctp-subtext: var(--ctp-subtext);
+  --color-ctp-overlay: var(--ctp-overlay);
+  --color-ctp-blue: var(--ctp-blue);
+  --color-ctp-mauve: var(--ctp-mauve);
+  --color-ctp-teal: var(--ctp-teal);
+  --color-ctp-green: var(--ctp-green);
+  --color-ctp-peach: var(--ctp-peach);
+  --color-ctp-red: var(--ctp-red);
+  --color-ctp-yellow: var(--ctp-yellow);
+  --font-sans: var(--font-ui);
+  --font-mono: var(--font-mono);
 }
 
 * {
@@ -41,12 +56,13 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  color: var(--cocoa);
+  color: var(--ctp-text);
   background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.22), transparent 42%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 28%),
-    var(--sand);
-  font-family: var(--mono-body);
+    radial-gradient(circle at 10% -10%, rgba(203, 166, 247, 0.2), transparent 40%),
+    radial-gradient(circle at 90% 120%, rgba(137, 180, 250, 0.16), transparent 32%),
+    linear-gradient(160deg, rgba(49, 50, 68, 0.58), rgba(30, 30, 46, 0.92) 45%),
+    var(--ctp-base);
+  font-family: var(--font-ui);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -57,13 +73,13 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.085;
+  opacity: 0.06;
   background-image:
-    radial-gradient(rgba(74, 67, 62, 0.45) 0.6px, transparent 0.8px),
-    radial-gradient(rgba(74, 67, 62, 0.18) 0.5px, transparent 0.7px);
+    radial-gradient(rgba(186, 194, 222, 0.35) 0.6px, transparent 0.8px),
+    radial-gradient(rgba(186, 194, 222, 0.2) 0.5px, transparent 0.7px);
   background-size: 4px 4px, 7px 7px;
   background-position: 0 0, 2px 3px;
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
 }
 
 a {
