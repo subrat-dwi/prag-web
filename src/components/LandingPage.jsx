@@ -69,9 +69,9 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
 
   return (
     <main className="relative prag-shell prag-bg-orbs prag-noise flex min-h-dvh flex-col justify-between bg-(--ctp-base) px-4 py-6 text-(--ctp-text) sm:px-6 lg:px-8">
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* <div className="absolute inset-0 z-0 overflow-hidden">
         <PixelBlast classname="relative h-full w-full overflow-hidden" />
-      </div>
+      </div> */}
       
       <div className="relative mx-auto z-10 flex w-full max-w-6xl flex-1 flex-col items-center justify-between gap-10 py-4 text-center">
         <div className="pt-4 sm:pt-10">

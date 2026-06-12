@@ -81,9 +81,9 @@ export default function ChatInterface({ indexedFiles: initialFiles, isLoading, m
   return (
     <div className="prag-shell prag-bg-orbs flex h-screen flex-col bg-(--ctp-base) px-3 py-3 text-(--ctp-text) sm:px-4 sm:py-4">
       <div className="prag-panel prag-slide-up flex min-h-0 flex-1 flex-col overflow-hidden">
-        <div className="absolute inset-0 -z-10 overflow-hidden opacity-25">
+        {/* <div className="absolute inset-0 -z-10 overflow-hidden opacity-25">
           <PixelBlast classname="relative h-full w-full overflow-hidden" />
-        </div>
+        </div> */}
       
 
         <header className="flex h-16 items-center justify-between gap-3 border-b border-(--ctp-surface1)/70 px-4 sm:px-5 shrink-0">
