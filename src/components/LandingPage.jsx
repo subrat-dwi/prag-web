@@ -25,7 +25,7 @@ export default function LandingPage({ expiredMessage, noticeMessage, onAuthentic
   // }, [])
   useEffect(() => {
   const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches
-  if (!isMobile) textareaRef.current?.focus()
+  if (!isMobile) inputRef.current?.focus()
 }, [])
 
   const errorMessage = localError || noticeMessage
