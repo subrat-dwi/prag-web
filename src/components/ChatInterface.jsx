@@ -64,7 +64,7 @@ export default function ChatInterface({ indexedFiles: initialFiles, isLoading, m
       .catch(() => {
         // silent fail - dropdown just shows the initial files list
       })
-  }, [])
+  }, [syncing])
 
   const handleSend = async (messageText = draft) => {
     const trimmedMessage = messageText.trim()

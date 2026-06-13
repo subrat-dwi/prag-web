@@ -46,16 +46,16 @@ function App() {
   }
   const [syncing, setSyncing] = useState(false)
   async function handleSync() {
-  setSyncing(true)
-  try {
-    await syncDrive(apiKey)
-    // toast/notify success
-  } catch (e) {
-    // toast/notify e.message
-  } finally {
-    setSyncing(false)
+    setSyncing(true)
+    try {
+      await syncDrive(apiKey)
+      // toast/notify success
+    } catch (e) {
+      // toast/notify e.message
+    } finally {
+      setSyncing(false)
+    }
   }
-}
 
   const clearExpiredMessage = () => setExpiredMessage('')
 
